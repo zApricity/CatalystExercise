@@ -4,7 +4,7 @@ if(!$dbConn) {
     exit("Failed to connect to database " . mysqli_connect_error());
 }
 
-$file=fopen('users.csv', 'r');
+$file=fopen('C:\xampp\htdocs\CatalystPractical\users.csv', 'r');
 
 $header=fgetcsv($file);
 
@@ -37,13 +37,12 @@ while($columns=fgetcsv($file))
            break;
            case "name":
             $value=trim($value, " ");
-            $value=preg_replace('/(?|!|@|-|_|\.)./', '', $value);
+            $value=preg_replace('/(?| |!|@|-|_|\.)./', '', $value);
             $value=strtolower($value);
             $value=ucfirst($value);
            break;
            case "surname":
-            $value=trim($value, " ");
-            $value=preg_replace('/(?|!|@|-|_|\.)./', '', $value);
+            $value=preg_replace('/(?| |!|@|-|_|\.)./', '', $value);
             $value=strtolower($value);
             $value=ucfirst($value);
            break;
