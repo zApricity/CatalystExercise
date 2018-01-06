@@ -1,0 +1,5 @@
+Options Indexes
+AuthType Basic
+AuthName "Please identify yourself"
+AuthUserFile C:\xampp\htdocs\landscapes\.htpasswd
+require valid-user
