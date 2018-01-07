@@ -151,7 +151,7 @@ function parseCSV($conn, $dry_run, $ufile) {
             if ($conn->query($sql) === TRUE) {
                 echo "User, " .$uname. " created successfully \n";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " .$conn->error. "\n";
             }
         }
     }
@@ -170,7 +170,7 @@ function createTable($conn) {
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
         name VARCHAR(30) NOT NULL,
         surname VARCHAR(30) NOT NULL,
-        email VARCHAR(50)
+        email VARCHAR(50) UNIQUE KEY
         )";
         
         if ($conn->query($sql) === TRUE) {
